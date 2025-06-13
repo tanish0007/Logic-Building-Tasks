@@ -49,7 +49,7 @@ void print(int n){
 
 int main() {
     int n = 5;
-    print(n);
+    print(n/2+1);
 
     return 0;
 }
