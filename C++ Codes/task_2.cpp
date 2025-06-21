@@ -19,6 +19,8 @@ int discount (int age) {
         return 0;
     else if(age >= 61)
         return 90;
+    else
+        return null;
 }
 
 int calculateTrainFair(int age, string trainClass, int distance) {
