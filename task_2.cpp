@@ -62,5 +62,6 @@ int main() {
     cout << "Enter the distance in km: ";
     cin >> distance;
     cout << "Your train fair would be: "<< calculateTrainFair(age, trainClass, distance) << endl;
+    
     return 0;
 }
