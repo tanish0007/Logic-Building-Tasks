@@ -1,4 +1,5 @@
-// Traverse 2-D array using Pointers
+// Traverse 2-D array using Pointers Approach
+
 #include <iostream>
 using namespace std;
 
