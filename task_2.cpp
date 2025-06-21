@@ -20,7 +20,7 @@ int discount (int age) {
     else if(age >= 61)
         return 90;
     else
-        return null;
+        return 0;
 }
 
 int calculateTrainFair(int age, string trainClass, int distance) {
@@ -62,6 +62,6 @@ int main() {
     cout << "Enter the distance in km: ";
     cin >> distance;
     cout << "Your train fair would be: "<< calculateTrainFair(age, trainClass, distance) << endl;
-    
+
     return 0;
 }
