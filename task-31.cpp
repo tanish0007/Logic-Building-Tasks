@@ -13,26 +13,25 @@ int findOccurence (string str, char ch){
     return occurence;
 }
 
+int isIncludes(char ch, string str){
+    for(int i=0; i<str.length(); i++){
+        if(str[i] == ch)
+            return i;
+    }
+    return -1;
+}
+
 bool isAnnagram (string str1, string str2){
     if(str1.length() != str2.length())
         return false;
-    // for(int i=0; i<str1.length(); i++){
-    //     int oc1 = findOccurence(str1, str1[i]);
-    //     for(int j=0; j<str2.length(); j++){
-    //         if(str1[i] == str2[j]){
-    //             int oc2 = findOccurence(str2, str2[j]);
-    //             if(oc1 == oc2)
-    //                 return true;
-    //         }
-    //         return false;
-    //     }
-    // }
-    
+
     for(int i=0; i<str1.length(); i++){
-        for(int j=0; j<str2.length(); j++){
-            if(str1[i] != str2[j])
-                
+        int pos = isIncludes(str1[i], str2);
+        if(pos == -1){
+            return false;
         }
+        if(findOccurence(str1, str1[i]) != findOccurence(str2, str2[pos]))
+            return false;
     }
     return true;
 }
