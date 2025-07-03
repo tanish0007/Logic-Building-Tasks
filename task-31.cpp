@@ -27,9 +27,8 @@ bool isAnnagram (string str1, string str2){
 
     for(int i=0; i<str1.length(); i++){
         int pos = isIncludes(str1[i], str2);
-        if(pos == -1){
+        if(pos == -1)
             return false;
-        }
         if(findOccurence(str1, str1[i]) != findOccurence(str2, str2[pos]))
             return false;
     }
