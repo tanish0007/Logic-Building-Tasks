@@ -1,4 +1,4 @@
-// find if two strings are annagram
+// find if two strings are anagram
 
 #include <iostream>
 #include <string>

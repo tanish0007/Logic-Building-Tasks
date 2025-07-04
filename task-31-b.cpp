@@ -1,4 +1,4 @@
-// is string annagram or not
+// is string anagram or not
 #include <iostream>
 #include <string>
 using namespace std;
