@@ -5,19 +5,33 @@ using namespace std;
 
 string newTask(string str){
     string newString = "";
-
-    for(int i=0; i<str.length();i++){
-        int count = 1;
-        while(str[i] == str[i+1]){
+    
+    int count = 1;
+    for(int i=0; i<str.length(); i++){
+        if(str[i] == str[i+1]){
             count++;
-            i++;
         }
-        if(count == 1)
-            newString += str[i];
-        else 
-            newString += str[i] + to_string(count);
-        count = 1;
+        else{
+            if(count == 1)
+                newString += str[i];
+            else 
+                newString += str[i] + to_string(count);
+            count = 1;
+        }
     }
+
+    // for(int i=0; i<str.length();i++){
+    //     int count = 1;
+    //     while(str[i] == str[i+1]){
+    //         count++;
+    //         i++;
+    //     }
+    //     if(count == 1)
+    //         newString += str[i];
+    //     else 
+    //         newString += str[i] + to_string(count);
+    //     count = 1;
+    // }
     return newString;
 }
 
