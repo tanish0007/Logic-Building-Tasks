@@ -2,29 +2,37 @@
 #include <string>
 using namespace std;
 
-string newTask(string str){
-    int count = 1;
-    for(int i=0; i<str.length(); i++){
-        while(str[i] == str[i+1]){
+void newTask(string &str) {
+    int n = str.length();
+    if (n == 0) return;
+    
+    int write = 0;
+    for (int read = 0; read < n; ) {
+        char current = str[read];
+        int count = 0;
+        
+        while (read < n && str[read] == current) {
+            read++;
             count++;
-            i++;
         }
-        if(count != 1){
-            cout << count;
-            cout << " "<< i << " ";
-            cout << " "<< str.length() - i<< " " <<endl;
+        
+        str[write++] = current;
+        
+        if (count > 1) {
+            string countStr = to_string(count);
+            for (char c : countStr) 
+                str[write++] = c;
         }
-        else{
-            cout << "hehe";
-        }
-        count =1;
     }
+    
+    str.resize(write);
 }
 
 int main() {
     string str;
     cout << "Enter a string: ";
     cin >> str;
-    cout << newTask(str);
+    newTask(str);
+    cout << str;
     return 0;
 }
