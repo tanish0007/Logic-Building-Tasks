@@ -20,8 +20,9 @@ void newTask(string &str) {
         
         if (count > 1) {
             string countStr = to_string(count);
-            for (char c : countStr) 
-                str[write++] = c;
+            for(int k=0; k<countStr.length(); k++){
+                str[write++] = countStr[k];
+            }
         }
     }
     
