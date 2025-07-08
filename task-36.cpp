@@ -16,47 +16,58 @@ void reverse(string &str, int start, int end){
     }
 }
 
-// void revWordsString(string &str){
-//     int j=0, k=0;
-//     for(int i=0; i<str.length(); ){
-//         if(!(str[i] == ' ' || str[i] == '\n' || str[i] == '\t')){
-//             k=i;
-//         }
-//         else{
-//             reverse(str, j, k);
-//             j = k = i+1;
-//         }
-//         if(i == str.length()-1){
-//             reverse(str, j, k);
-//             j = k = i+1;
-//         }
-//         i++;
-//     }
-// }
-
 void revWordsString(string &str){
     int j=0, k=0;
-    cout << "j: "<< j<< " k: " << k << endl;
     for(int i=0; i<str.length(); ){
         if(!(str[i] == ' ' || str[i] == '\n' || str[i] == '\t')){
             k=i;
         }
         else{
-            cout << "j: "<< j<< " k: " << k << endl;
             reverse(str, j, k);
-            j = k = i+1;
-            cout << "j: "<< j<< " k: " << k << endl;
+            while(str[i] == ' ' || str[i] == '\n' || str[i] == '\t'){
+                i++;
+            }
+            j = k = i;
         }
         if(i == str.length()-1){
-            cout << "j: "<< j<< " k: " << k << endl;
             reverse(str, j, k);
             j = k = i+1;
-            cout << "j: "<< j<< " k: " << k << endl;
         }
         i++;
-        cout << "i : "<< i << endl;
     }
 }
+
+// void revWordsString(string &str){
+//     int j=0, k=0;
+//     cout << "j: "<< j<< " k: " << k << endl;
+//     for(int i=0; i<str.length(); ){
+//         if(!(str[i] == ' ' || str[i] == '\n' || str[i] == '\t')){
+//             k=i;
+//         }
+//         else{
+//             cout << "j: "<< j<< " k: " << k << endl;
+//             cout << "apply reverse" << endl;
+//             reverse(str, j, k);
+//             cout << "Now string is: "<< str << endl;
+//             while(str[i] == ' ' || str[i] == '\n' || str[i] == '\t'){
+//                 i++;
+//                 cout << "i for space: "<< i << endl;
+//             }
+//             j = k = i;
+//             cout << "j: "<< j<< " k: " << k << endl;
+//         }
+//         if(i == str.length()-1){
+//             cout << "j: "<< j<< " k: " << k << endl;
+//             cout << "apply reverse" << endl;
+//             reverse(str, j, k);
+//             cout << "Now string is: "<< str << endl;
+//             j = k = i+1;
+//             cout << "j: "<< j<< " k: " << k << endl;
+//         }
+//         i++;
+//         cout << "i : "<< i << endl;
+//     }
+// }
 
 int main(){
     string str;
