@@ -7,10 +7,9 @@
 
 #include <stdio.h>
 #include <stdbool.h>
-
 bool isPerfect(int num){
     int res = 0;
-    for(int i=1; i <= (num/2)+1; i++){
+    for(int i=1; i <= (num/2); i++){
         if(num % i == 0){
             res += i;
         }
@@ -18,13 +17,10 @@ bool isPerfect(int num){
     if(res == num) return true;
     else return false;
 }
-
 int main(){
     int num;
-    printf("Enter a number: ");
     scanf("%d",&num); 
-    
-    if(isPerfect(num)) printf("Yes");
-    else printf("No");
+    if(isPerfect(num)) printf("Yes\n");
+    else printf("No\n");
     return 0;
 }
